@@ -1,0 +1,39 @@
+# dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# env / secrets
+.env
+.env.*
+!.env.example
+
+# build / logs
+dist/
+build/
+logs/
+*.log
+pino-*.log
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# runtime
+tmp/
+temp/
+.cache/
+coverage/
+
+# supabase local
+supabase/.branches
+supabase/.temp

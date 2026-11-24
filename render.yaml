@@ -1,0 +1,91 @@
+services:
+  - type: web
+    name: factor
+    runtime: node
+    plan: free
+    region: frankfurt
+    branch: main
+    autoDeploy: true
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: "20.11.1"
+      - key: PORT
+        value: 10000
+      - key: APP_URL
+        sync: false
+      - key: CORS_ORIGIN
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: SUPABASE_STORAGE_BUCKET
+        value: factor-media
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRES_IN
+        value: 30d
+      - key: OTP_TTL_MINUTES
+        value: 10
+      - key: OTP_MAX_ATTEMPTS
+        value: 5
+      - key: SMTP_HOST
+        sync: false
+      - key: SMTP_PORT
+        value: 465
+      - key: SMTP_SECURE
+        value: true
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASS
+        sync: false
+      - key: MAIL_FROM
+        sync: false
+      - key: DEVELOPER_EMAILS
+        value: artemnef0r@icloud.com
+      - key: RL_MESSAGES_PER_MIN
+        value: 30
+      - key: RL_AUTH_ATTEMPTS
+        value: 5
+      - key: RL_AUTH_WINDOW_MIN
+        value: 15
+      - key: MAX_PHOTO_BYTES
+        value: 10485760
+      - key: MAX_VIDEO_BYTES
+        value: 52428800
+      - key: MAX_VOICE_BYTES
+        value: 5242880
+      - key: MAX_MUSIC_BYTES
+        value: 20971520
+      - key: MAX_VIDEO_DURATION_SEC
+        value: 60
+      - key: BIO_MAX_CHARS
+        value: 80
+      - key: USERNAME_MIN
+        value: 5
+      - key: USERNAME_MAX
+        value: 32
+      - key: AGE_MIN
+        value: 1
+      - key: AGE_MAX
+        value: 100
+      - key: CHAT_HARD_DELETE_DAYS
+        value: 31
+      - key: MESSAGE_DELETE_HOURS
+        value: 72
+      - key: GROUP_MAX_MEMBERS
+        value: 100
+      - key: MUSIC_COOLDOWN_1_H
+        value: 24
+      - key: MUSIC_COOLDOWN_2_H
+        value: 72
+      - key: MUSIC_COOLDOWN_3_H
+        value: 168
+        
